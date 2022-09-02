@@ -49,7 +49,7 @@ driver.get("http://localhost:8112")
 elemento_cr_ti = driver.find_element(By.xpath, "//*[@id='CreateTicketInQueue']/div[1]/input")
 elemento_cr_ti.click()
 
-elemento1 = driver.find_element(By.CLASS_NAME, "//*[@id='TitleBox--_Ticket_Create_html--messagedetails----Q3JlYXRlIGEgbmV3IHRpY2tldCBpbiBHZW5lcmFs---0']/div/div/div[4]/div[2]/input")
+elemento1 = driver.find_element(By.xpath, "//*[@id='TitleBox--_Ticket_Create_html--messagedetails----Q3JlYXRlIGEgbmV3IHRpY2tldCBpbiBHZW5lcmFs---0']/div/div/div[4]/div[2]/input")
 elemento1.send_keys("esto es una prueba de carolina pereira")
 
 elemento2 = driver.find_element(By.xpath, "//*[@id='SubmitTicket']/div[2]/input")
