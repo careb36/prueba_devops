@@ -29,15 +29,17 @@ driver.get("http://localhost:8112/")
 elemento_user = driver.find_element(By.ID, "user")
 elemento_user.clear()
 elemento_user.send_keys("root")
+
 # busco el elemento por xpath porque no tengo id y lo guardo en una variable elemento_pass
-elemento_pass = driver.find_element(By.xpath, "//*[@id='login']/div[2]/div[2]/input")
+elemento_pass = driver.find_element(By.NAME, "pass")
 elemento_pass.clear()
 elemento_pass.send_keys("password")
 
-driver.find_element(By.xpath, "//*[@id='login']/div[3]/div/input").click()
-driver.get("http://localhost:8112")
+driver.find_element(By.CLASS_NAME, "form-control btn btn-primary").click()
 
 time.sleep(20)
+
+driver.get("http://localhost:8112")
 
 #B) seleccionar la opción de crear un nuevo ticket (o caso).
 #C) ingresar al menos un valor en un campo del ticket
@@ -47,7 +49,7 @@ time.sleep(20)
 elemento_cr_ti = driver.find_element(By.xpath, "//*[@id='CreateTicketInQueue']/div[1]/input")
 elemento_cr_ti.click()
 
-elemento1 = driver.find_element(By.xpath, "//*[@id='TitleBox--_Ticket_Create_html--messagedetails----Q3JlYXRlIGEgbmV3IHRpY2tldCBpbiBHZW5lcmFs---0']/div/div/div[4]/div[2]/input")
+elemento1 = driver.find_element(By.CLASS_NAME, "//*[@id='TitleBox--_Ticket_Create_html--messagedetails----Q3JlYXRlIGEgbmV3IHRpY2tldCBpbiBHZW5lcmFs---0']/div/div/div[4]/div[2]/input")
 elemento1.send_keys("esto es una prueba de carolina pereira")
 
 elemento2 = driver.find_element(By.xpath, "//*[@id='SubmitTicket']/div[2]/input")
